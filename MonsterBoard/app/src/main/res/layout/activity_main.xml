@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <FrameLayout
+        android:layout_width="@dimen/ultra"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_player_O"
+            android:layout_width="@dimen/big"
+            android:layout_height="@dimen/big"
+            android:layout_gravity="center"
+            android:background="@color/playerO"
+            android:text="@string/player_one"
+            android:gravity="center"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/ultra"
+        android:layout_marginLeft="@dimen/ultra"
+        android:layout_marginRight="@dimen/ultra"
+        android:layout_marginStart="@dimen/ultra"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/ultra"
+        android:paddingBottom="@dimen/normal">
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_1_1"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_1_1"
+                    style="@style/CellText" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_1_2"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_1_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_1_3"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_1_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_1_4"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_1_4"
+                    style="@style/CellText" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_1_5"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_1_5"
+                    style="@style/CellText" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_1_6"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_1_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_2_1"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_2_1"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_2_2"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_2_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_2_3"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_2_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_2_4"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_2_4"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_2_5"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_2_5"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_2_6"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_2_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_3_1"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_3_1"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_3_2"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_3_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_3_3"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_3_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_3_4"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_3_4"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_3_5"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_3_5"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_3_6"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_3_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_4_1"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_4_1"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_4_2"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_4_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_4_3"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_4_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_4_4"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_4_4"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_4_5"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_4_5"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_4_6"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_4_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_5_1"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_5_1"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_5_2"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_5_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_5_3"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_5_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_5_4"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_5_4"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_5_5"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_5_5"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_5_6"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_5_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_6_1"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_6_1"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_6_2"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_6_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_6_3"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_6_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_6_4"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_6_4"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_6_5"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_6_5"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_6_6"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_6_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_7_1"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_7_1"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_7_2"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_7_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_7_3"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_7_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_7_4"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_7_4"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_7_5"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_7_5"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_7_6"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_7_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/tr_8_1"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_8_1"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_8_2"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_8_2"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_8_3"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_8_3"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_8_4"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_8_4"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_8_5"
+                style="@style/CellTableRow.Clear">
+
+                <TextView
+                    android:id="@+id/tv_8_5"
+                    style="@style/CellText" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_8_6"
+                style="@style/CellTableRow.Dark">
+
+                <TextView
+                    android:id="@+id/tv_8_6"
+                    style="@style/CellText" />
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/ultra"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical|end">
+
+        <TextView
+            android:id="@+id/tv_player_X"
+            android:layout_width="@dimen/big"
+            android:layout_height="@dimen/big"
+            android:layout_gravity="center"
+            android:background="@color/playerX"
+            android:text="@string/player_two"
+            android:gravity="center"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_player_turn"
+        style="@style/TurnText"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ultra"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"/>
+
+</FrameLayout>

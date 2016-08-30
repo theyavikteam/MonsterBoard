@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MonsterBoard</string>
+
+    <string name="player_one">O</string>
+    <string name="player_two">X</string>
+
+    <string name="turn_play_message">Player %1$s, start your turn.</string>
+    <string name="turn_move_message">Player %1$s, make your move.</string>
+
+</resources>
