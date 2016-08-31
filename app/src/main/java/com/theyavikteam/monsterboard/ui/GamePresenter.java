@@ -3,8 +3,8 @@ package com.theyavikteam.monsterboard.ui;
 import android.content.Context;
 
 import com.theyavikteam.monsterboard.R;
+import com.theyavikteam.monsterboard.model.domain.CellDomain;
 import com.theyavikteam.monsterboard.model.domain.GameDomain;
-import com.theyavikteam.monsterboard.model.vo.CellVO;
 import com.theyavikteam.monsterboard.model.domain.PlayerDomain;
 
 public class GamePresenter implements GameContract.Presenter {
@@ -28,20 +28,21 @@ public class GamePresenter implements GameContract.Presenter {
     }
 
     @Override
-    public void onClickCell(CellVO cell) {
+    public void onClickCell(int cellIndex) {
         if (view != null) {
             PlayerDomain currentPlayer = game.getCurrentPlayer();
-            if (cell.hasPlayer()) {
+            CellDomain clickedCell = game.getCells().get(cellIndex);
+            if (clickedCell.hasPlayer()) {
                 failClickMessage(R.string.error_move_message, currentPlayer);
             } else {
                 if (!game.isMovementMade() && !currentPlayer.getPlayerSymbol().equalsIgnoreCase(game.getLastPlayerSymbol())) {
                     game.makeMove();
-                    game.updateScore();
+                    game.updateScore(cellIndex);
                     updateScores(game);
                     changeTurnMessage(R.string.turn_play_message, game.getOtherPlayer());
-                    view.setCell(cell, currentPlayer);
+                    view.setCell(cellIndex, currentPlayer);
                 } else {
-                    view.showToast(formattedMessage(R.string.turn_why_message, game.getCurrentPlayer().getPlayerSymbol()));
+                    view.showToast(formattedMessage(R.string.turn_why_message, game.getOtherPlayer().getPlayerSymbol()));
                 }
             }
 

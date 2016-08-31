@@ -29,6 +29,10 @@ public class CellDomain {
         return player;
     }
 
+    public void setPlayer(PlayerDomain player) {
+        this.player = player;
+    }
+
     public boolean hasPlayer(){
         return player != null;
     }

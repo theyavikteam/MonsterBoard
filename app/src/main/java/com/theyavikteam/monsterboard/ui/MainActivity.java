@@ -327,6 +327,9 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
         cells.add(new CellVO(tv84, tr84, 8, 4));
         cells.add(new CellVO(tv85, tr85, 8, 5));
         cells.add(new CellVO(tv86, tr86, 8, 6));
+        for (int i = 0; i < cells.size(); i ++){
+            cells.get(i).setCellIndex(i);
+        }
         return cells;
     }
 
@@ -341,7 +344,7 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
             cell.getTableRow().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    gamePresenter.onClickCell(cell);
+                    gamePresenter.onClickCell(cell.getCellIndex());
                 }
             });
         }
@@ -353,13 +356,11 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
     }
 
     @Override
-    public void setCell(CellVO cell, PlayerDomain player) {
-        int cellIndex = cells.indexOf(cell);
+    public void setCell(int cellIndex, PlayerDomain player) {
         if (cellIndex != -1){
             CellVO oldCell = cells.get(cellIndex);
             oldCell.getTableRow().setBackgroundColor(getResources().getColor(player.getPlayerColor()));
             oldCell.getTextView().setText(player.getPlayerSymbol());
-            oldCell.setPlayerVO(player);
             cells.set(cellIndex, oldCell);
         }
     }
