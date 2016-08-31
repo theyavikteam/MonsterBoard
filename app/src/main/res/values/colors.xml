@@ -12,6 +12,7 @@
     <color name="playerX">#15A7E1</color>
 
     <color name="black">#000</color>
+    <color name="white">#FFF</color>
 
     <color name="transparentGrey">#A0A0A0A0</color>
 </resources>
