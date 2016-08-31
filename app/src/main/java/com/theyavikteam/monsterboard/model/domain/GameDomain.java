@@ -20,7 +20,7 @@ public class GameDomain {
         this.playerO = playerO;
         this.playerX = playerX;
         movementMade = false;
-        turn = new Random().nextInt(1);
+        turn = (new Random().nextInt(10))%2;
         this.columnSize = columnSize;
         this.rowSize = rowSize;
         this.cells = initializeCells();
