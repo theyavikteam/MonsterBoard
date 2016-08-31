@@ -1,7 +1,6 @@
 package com.theyavikteam.monsterboard.model.domain;
 
 import com.theyavikteam.monsterboard.model.constants.GameConstants;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -47,10 +46,6 @@ public class GameDomain {
         return playerX;
     }
 
-    public int getTurn() {
-        return turn;
-    }
-
     public PlayerDomain getCurrentPlayer() {
         if (turn == 0) {
             return playerO;
@@ -91,7 +86,7 @@ public class GameDomain {
 
     public void updateScore(int cellIndex) {
         PlayerDomain currentPlayer = getCurrentPlayer();
-        int newScore = currentPlayer.getScore() + 1;
+        int newScore = currentPlayer.getScore() + GameConstants.SIMPLE_SCORE;
         cells.get(cellIndex).setPlayer(currentPlayer);
         newScore += getLinealScore(currentPlayer, cellIndex);
         newScore += getDiagonalScore(currentPlayer, cellIndex);
