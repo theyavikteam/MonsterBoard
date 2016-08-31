@@ -22,42 +22,59 @@ public class GamePresenter implements GameContract.Presenter {
         this.context = context;
         game = new GameDomain(new PlayerDomain(PLAYER_O, R.color.playerO), new PlayerDomain(PLAYER_X, R.color.playerX));
         changeTurnMessage(R.string.turn_move_message, game.getCurrentPlayer());
+        updateScores(game);
     }
 
     @Override
     public void onClickCell(CellVO cell) {
         if (view != null) {
             PlayerDomain currentPlayer = game.getCurrentPlayer();
-            if (!game.isMovementMade() && !currentPlayer.getPlayerSymbol().equalsIgnoreCase(game.getLastPlayerSymbol())) {
-                game.makeMove();
-                changeTurnMessage(R.string.turn_play_message, game.getOtherPlayer());
-                view.setCell(cell, currentPlayer);
+            if (cell.hasPlayer()) {
+                failClickMessage(R.string.error_move_message, currentPlayer);
             } else {
-                if (game.getTurn() == 0) {
-                    view.showFailToast(game.getPlayerX());
+                if (!game.isMovementMade() && !currentPlayer.getPlayerSymbol().equalsIgnoreCase(game.getLastPlayerSymbol())) {
+                    game.makeMove();
+                    game.updateScore();
+                    updateScores(game);
+                    changeTurnMessage(R.string.turn_play_message, game.getOtherPlayer());
+                    view.setCell(cell, currentPlayer);
                 } else {
-                    view.showFailToast(game.getPlayerO());
+                    view.showToast(formattedMessage(R.string.turn_why_message, game.getCurrentPlayer().getPlayerSymbol()));
                 }
             }
+
         }
     }
 
     @Override
     public void onClickChange(String playerSymbol) {
         if (view != null) {
-            if (!game.isMovementMade() && game.getCurrentPlayer().getPlayerSymbol().equals(playerSymbol)) {
-                view.showFailToast(game.getCurrentPlayer());
-            } else {
+            if (game.getLastPlayerSymbol() != null && game.isMovementMade() && game.getOtherPlayer().getPlayerSymbol().equals(playerSymbol)) {
                 game.changeTurn();
                 changeTurnMessage(R.string.turn_move_message, game.getCurrentPlayer());
             }
         }
     }
 
+    private void updateScores(GameDomain game){
+        if (view != null){
+            view.setPlayersScore(game.getPlayerO().getScore()+"", game.getPlayerX().getScore()+"");
+        }
+    }
+
     private void changeTurnMessage(int stringResource, PlayerDomain player) {
         if (view != null) {
-            String message = String.format(context.getString(stringResource), player.getPlayerSymbol());
-            view.setTurnMessage(message);
+            view.setTurnMessage(formattedMessage(stringResource, player.getPlayerSymbol()));
         }
+    }
+
+    private void failClickMessage(int stringResource, PlayerDomain playerDomain) {
+        if (view != null) {
+            view.showToast(formattedMessage(stringResource, playerDomain.getPlayerSymbol()));
+        }
+    }
+
+    private String formattedMessage(int stringResource, String text) {
+        return String.format(context.getString(stringResource), text);
     }
 }

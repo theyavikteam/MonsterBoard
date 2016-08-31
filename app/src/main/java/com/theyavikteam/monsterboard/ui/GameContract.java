@@ -8,10 +8,10 @@ import com.theyavikteam.monsterboard.model.domain.PlayerDomain;
 public interface GameContract {
 
     interface View{
-        void showTurnToast(PlayerDomain playerVO);
         void setCell(CellVO cell, PlayerDomain player);
-        void showFailToast(PlayerDomain player);
+        void showToast(String message);
         void setTurnMessage(String message);
+        void setPlayersScore(String newOScore, String newXScore);
     }
 
     interface Presenter{

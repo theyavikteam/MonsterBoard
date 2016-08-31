@@ -19,6 +19,14 @@
             android:text="@string/player_one"
             android:gravity="center"/>
 
+        <TextView
+            android:id="@+id/tv_player_O_score"
+            android:layout_width="@dimen/big"
+            android:layout_height="@dimen/big"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/big"/>
+
     </FrameLayout>
 
     <LinearLayout
@@ -541,6 +549,15 @@
             android:background="@color/playerX"
             android:text="@string/player_two"
             android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/tv_player_X_score"
+            android:layout_width="@dimen/big"
+            android:layout_height="@dimen/big"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/big"/>
 
     </FrameLayout>
 

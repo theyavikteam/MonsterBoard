@@ -236,12 +236,20 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
 
     @Bind(R.id.tv_player_O)
     TextView tvPlayerO;
+    @Bind(R.id.tv_player_O_score)
+    TextView tvPlayerOScore;
+
     @Bind(R.id.tv_player_X)
     TextView tvPlayerX;
+    @Bind(R.id.tv_player_X_score)
+    TextView tvPlayerXScore;
 
     GameContract.Presenter gamePresenter;
 
     List<CellVO> cells;
+
+
+    Toast messageToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -340,26 +348,9 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
         }
     }
 
-    private void setCellText(TextView textView){
-        if (textView != null){
-            if(textView.getText() != null && textView.getText() != ""){
-                Integer newInt = Integer.parseInt(textView.getText().toString()) + 1;
-                String newText = newInt + "";
-                textView.setText(newText);
-            }else {
-                textView.setText("1");
-            }
-        }
-    }
-
     @OnClick({R.id.tv_player_O, R.id.tv_player_X})
     public void onClickPlayer(TextView playerTextView){
         gamePresenter.onClickChange(playerTextView.getText().toString());
-    }
-
-    @Override
-    public void showTurnToast(PlayerDomain player) {
-        Toast.makeText(this, "Player " + player.getPlayerSymbol()+ ", please make your move", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -375,12 +366,22 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
     }
 
     @Override
-    public void showFailToast(PlayerDomain player) {
-        Toast.makeText(this, "Is player " + player.getPlayerSymbol()+ " turn", Toast.LENGTH_LONG).show();
+    public void showToast(String message){
+        if (messageToast != null){
+            messageToast.cancel();
+        }
+        messageToast = Toast.makeText(this, message, Toast.LENGTH_LONG);
+        messageToast.show();
     }
 
     @Override
     public void setTurnMessage(String message) {
         tvPlayerTurn.setText(message);
+    }
+
+    @Override
+    public void setPlayersScore(String newOScore, String newXScore) {
+        tvPlayerOScore.setText(newOScore);
+        tvPlayerXScore.setText(newXScore);
     }
 }

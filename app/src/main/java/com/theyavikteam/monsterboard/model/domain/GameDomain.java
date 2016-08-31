@@ -33,6 +33,12 @@ public class GameDomain {
         lastPlayerSymbol = getCurrentPlayer().getPlayerSymbol();
     }
 
+    public void updateScore(){
+        PlayerDomain currentPlayer = getCurrentPlayer();
+        int newScore = currentPlayer.getScore() + 1;
+        currentPlayer.setScore(newScore);
+    }
+
     public String getLastPlayerSymbol() {
         return lastPlayerSymbol;
     }

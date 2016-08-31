@@ -7,4 +7,8 @@
     <string name="turn_play_message">Player %1$s, start your turn.</string>
     <string name="turn_move_message">Player %1$s, make your move.</string>
 
+    <string name="turn_why_message">It´s %1$s player turn.</string>
+
+    <string name="error_move_message">Player %1$s, click another cell.</string>
+
 </resources>
