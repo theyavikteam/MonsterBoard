@@ -11,6 +11,8 @@ public class GamePresenter implements GameContract.Presenter {
 
     private static final String PLAYER_O = "O";
     private static final String PLAYER_X = "X";
+    private static final int BOARD_COLUMNS = 8;
+    private static final int BOARD_ROWS = 6;
 
     private Context context;
     private GameContract.View view;
@@ -20,7 +22,7 @@ public class GamePresenter implements GameContract.Presenter {
     public void initializePresenter(Context context, GameContract.View view) {
         this.view = view;
         this.context = context;
-        game = new GameDomain(new PlayerDomain(PLAYER_O, R.color.playerO), new PlayerDomain(PLAYER_X, R.color.playerX));
+        game = new GameDomain(new PlayerDomain(PLAYER_O, R.color.playerO), new PlayerDomain(PLAYER_X, R.color.playerX), BOARD_COLUMNS, BOARD_ROWS);
         changeTurnMessage(R.string.turn_move_message, game.getCurrentPlayer());
         updateScores(game);
     }

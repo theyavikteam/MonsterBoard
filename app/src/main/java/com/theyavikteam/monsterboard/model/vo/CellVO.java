@@ -10,10 +10,14 @@ public class CellVO {
     private TextView textView;
     private TableRow tableRow;
     private PlayerDomain playerVO;
+    private int column;
+    private int row;
 
-    public CellVO(TextView textView, TableRow tableRow) {
+    public CellVO(TextView textView, TableRow tableRow, int column ,int row) {
         this.textView = textView;
         this.tableRow = tableRow;
+        this.column = column;
+        this.row = row;
     }
 
     public TextView getTextView() {
@@ -22,6 +26,14 @@ public class CellVO {
 
     public TableRow getTableRow() {
         return tableRow;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public int getRow() {
+        return row;
     }
 
     public void setPlayerVO(PlayerDomain playerVO) {

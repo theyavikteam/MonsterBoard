@@ -248,7 +248,6 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
 
     List<CellVO> cells;
 
-
     Toast messageToast;
 
     @Override
@@ -273,61 +272,61 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
 
     private List<CellVO> initializeCells(){
         cells = new ArrayList<>();
-        cells.add(new CellVO(tv11, tr11));
-        cells.add(new CellVO(tv12, tr12));
-        cells.add(new CellVO(tv13, tr13));
-        cells.add(new CellVO(tv14, tr14));
-        cells.add(new CellVO(tv15, tr15));
-        cells.add(new CellVO(tv16, tr16));
+        cells.add(new CellVO(tv11, tr11, 1, 1));
+        cells.add(new CellVO(tv12, tr12, 1, 2));
+        cells.add(new CellVO(tv13, tr13, 1, 3));
+        cells.add(new CellVO(tv14, tr14, 1, 4));
+        cells.add(new CellVO(tv15, tr15, 1, 5));
+        cells.add(new CellVO(tv16, tr16, 1, 6));
 
-        cells.add(new CellVO(tv21, tr21));
-        cells.add(new CellVO(tv22, tr22));
-        cells.add(new CellVO(tv23, tr23));
-        cells.add(new CellVO(tv24, tr24));
-        cells.add(new CellVO(tv25, tr25));
-        cells.add(new CellVO(tv26, tr26));
+        cells.add(new CellVO(tv21, tr21, 2, 1));
+        cells.add(new CellVO(tv22, tr22, 2, 2));
+        cells.add(new CellVO(tv23, tr23, 2, 3));
+        cells.add(new CellVO(tv24, tr24, 2, 4));
+        cells.add(new CellVO(tv25, tr25, 2, 5));
+        cells.add(new CellVO(tv26, tr26, 2, 6));
 
-        cells.add(new CellVO(tv31, tr31));
-        cells.add(new CellVO(tv32, tr32));
-        cells.add(new CellVO(tv33, tr33));
-        cells.add(new CellVO(tv34, tr34));
-        cells.add(new CellVO(tv35, tr35));
-        cells.add(new CellVO(tv36, tr36));
+        cells.add(new CellVO(tv31, tr31, 3, 1));
+        cells.add(new CellVO(tv32, tr32, 3, 2));
+        cells.add(new CellVO(tv33, tr33, 3, 3));
+        cells.add(new CellVO(tv34, tr34, 3, 4));
+        cells.add(new CellVO(tv35, tr35, 3, 5));
+        cells.add(new CellVO(tv36, tr36, 3, 6));
 
-        cells.add(new CellVO(tv41, tr41));
-        cells.add(new CellVO(tv42, tr42));
-        cells.add(new CellVO(tv43, tr43));
-        cells.add(new CellVO(tv44, tr44));
-        cells.add(new CellVO(tv45, tr45));
-        cells.add(new CellVO(tv46, tr46));
+        cells.add(new CellVO(tv41, tr41, 4, 1));
+        cells.add(new CellVO(tv42, tr42, 4, 2));
+        cells.add(new CellVO(tv43, tr43, 4, 3));
+        cells.add(new CellVO(tv44, tr44, 4, 4));
+        cells.add(new CellVO(tv45, tr45, 4, 5));
+        cells.add(new CellVO(tv46, tr46, 4, 6));
 
-        cells.add(new CellVO(tv51, tr51));
-        cells.add(new CellVO(tv52, tr52));
-        cells.add(new CellVO(tv53, tr53));
-        cells.add(new CellVO(tv54, tr54));
-        cells.add(new CellVO(tv55, tr55));
-        cells.add(new CellVO(tv56, tr56));
+        cells.add(new CellVO(tv51, tr51, 5, 1));
+        cells.add(new CellVO(tv52, tr52, 5, 2));
+        cells.add(new CellVO(tv53, tr53, 5, 3));
+        cells.add(new CellVO(tv54, tr54, 5, 4));
+        cells.add(new CellVO(tv55, tr55, 5, 5));
+        cells.add(new CellVO(tv56, tr56, 5, 6));
 
-        cells.add(new CellVO(tv61, tr61));
-        cells.add(new CellVO(tv62, tr62));
-        cells.add(new CellVO(tv63, tr63));
-        cells.add(new CellVO(tv64, tr64));
-        cells.add(new CellVO(tv65, tr65));
-        cells.add(new CellVO(tv66, tr66));
+        cells.add(new CellVO(tv61, tr61, 6, 1));
+        cells.add(new CellVO(tv62, tr62, 6, 2));
+        cells.add(new CellVO(tv63, tr63, 6, 3));
+        cells.add(new CellVO(tv64, tr64, 6, 4));
+        cells.add(new CellVO(tv65, tr65, 6, 5));
+        cells.add(new CellVO(tv66, tr66, 6, 6));
 
-        cells.add(new CellVO(tv71, tr71));
-        cells.add(new CellVO(tv72, tr72));
-        cells.add(new CellVO(tv73, tr73));
-        cells.add(new CellVO(tv74, tr74));
-        cells.add(new CellVO(tv75, tr75));
-        cells.add(new CellVO(tv76, tr76));
+        cells.add(new CellVO(tv71, tr71, 7, 1));
+        cells.add(new CellVO(tv72, tr72, 7, 2));
+        cells.add(new CellVO(tv73, tr73, 7, 3));
+        cells.add(new CellVO(tv74, tr74, 7, 4));
+        cells.add(new CellVO(tv75, tr75, 7, 5));
+        cells.add(new CellVO(tv76, tr76, 7, 6));
 
-        cells.add(new CellVO(tv81, tr81));
-        cells.add(new CellVO(tv82, tr82));
-        cells.add(new CellVO(tv83, tr83));
-        cells.add(new CellVO(tv84, tr84));
-        cells.add(new CellVO(tv85, tr85));
-        cells.add(new CellVO(tv86, tr86));
+        cells.add(new CellVO(tv81, tr81, 8, 1));
+        cells.add(new CellVO(tv82, tr82, 8, 2));
+        cells.add(new CellVO(tv83, tr83, 8, 3));
+        cells.add(new CellVO(tv84, tr84, 8, 4));
+        cells.add(new CellVO(tv85, tr85, 8, 5));
+        cells.add(new CellVO(tv86, tr86, 8, 6));
         return cells;
     }
 
