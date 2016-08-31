@@ -274,67 +274,71 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
     private void initializeGame() {
         gamePresenter = new GamePresenter();
         gamePresenter.initializePresenter(this, this);
-        initializeCells();
+        initializeGameView();
+    }
+
+    private void initializeGameView(){
+        initializeCells(R.color.cellClear, R.color.cellDark);
         initializeCellClickListeners(cells);
     }
 
-    private List<CellVO> initializeCells(){
+    private List<CellVO> initializeCells(int clearCellColorResource, int darkCellColorResource){
         cells = new ArrayList<>();
-        cells.add(new CellVO(tv11, tr11, 1, 1));
-        cells.add(new CellVO(tv12, tr12, 1, 2));
-        cells.add(new CellVO(tv13, tr13, 1, 3));
-        cells.add(new CellVO(tv14, tr14, 1, 4));
-        cells.add(new CellVO(tv15, tr15, 1, 5));
-        cells.add(new CellVO(tv16, tr16, 1, 6));
+        cells.add(new CellVO(this, tv11, tr11, clearCellColorResource));
+        cells.add(new CellVO(this, tv12, tr12, darkCellColorResource));
+        cells.add(new CellVO(this, tv13, tr13, clearCellColorResource));
+        cells.add(new CellVO(this, tv14, tr14, darkCellColorResource));
+        cells.add(new CellVO(this, tv15, tr15, clearCellColorResource));
+        cells.add(new CellVO(this, tv16, tr16, darkCellColorResource));
 
-        cells.add(new CellVO(tv21, tr21, 2, 1));
-        cells.add(new CellVO(tv22, tr22, 2, 2));
-        cells.add(new CellVO(tv23, tr23, 2, 3));
-        cells.add(new CellVO(tv24, tr24, 2, 4));
-        cells.add(new CellVO(tv25, tr25, 2, 5));
-        cells.add(new CellVO(tv26, tr26, 2, 6));
+        cells.add(new CellVO(this, tv21, tr21, darkCellColorResource));
+        cells.add(new CellVO(this, tv22, tr22, clearCellColorResource));
+        cells.add(new CellVO(this, tv23, tr23, darkCellColorResource));
+        cells.add(new CellVO(this, tv24, tr24, clearCellColorResource));
+        cells.add(new CellVO(this, tv25, tr25, darkCellColorResource));
+        cells.add(new CellVO(this, tv26, tr26, clearCellColorResource));
 
-        cells.add(new CellVO(tv31, tr31, 3, 1));
-        cells.add(new CellVO(tv32, tr32, 3, 2));
-        cells.add(new CellVO(tv33, tr33, 3, 3));
-        cells.add(new CellVO(tv34, tr34, 3, 4));
-        cells.add(new CellVO(tv35, tr35, 3, 5));
-        cells.add(new CellVO(tv36, tr36, 3, 6));
+        cells.add(new CellVO(this, tv31, tr31, clearCellColorResource));
+        cells.add(new CellVO(this, tv32, tr32, darkCellColorResource));
+        cells.add(new CellVO(this, tv33, tr33, clearCellColorResource));
+        cells.add(new CellVO(this, tv34, tr34, darkCellColorResource));
+        cells.add(new CellVO(this, tv35, tr35, clearCellColorResource));
+        cells.add(new CellVO(this, tv36, tr36, darkCellColorResource));
 
-        cells.add(new CellVO(tv41, tr41, 4, 1));
-        cells.add(new CellVO(tv42, tr42, 4, 2));
-        cells.add(new CellVO(tv43, tr43, 4, 3));
-        cells.add(new CellVO(tv44, tr44, 4, 4));
-        cells.add(new CellVO(tv45, tr45, 4, 5));
-        cells.add(new CellVO(tv46, tr46, 4, 6));
+        cells.add(new CellVO(this, tv41, tr41, darkCellColorResource));
+        cells.add(new CellVO(this, tv42, tr42, clearCellColorResource));
+        cells.add(new CellVO(this, tv43, tr43, darkCellColorResource));
+        cells.add(new CellVO(this, tv44, tr44, clearCellColorResource));
+        cells.add(new CellVO(this, tv45, tr45, darkCellColorResource));
+        cells.add(new CellVO(this, tv46, tr46, clearCellColorResource));
 
-        cells.add(new CellVO(tv51, tr51, 5, 1));
-        cells.add(new CellVO(tv52, tr52, 5, 2));
-        cells.add(new CellVO(tv53, tr53, 5, 3));
-        cells.add(new CellVO(tv54, tr54, 5, 4));
-        cells.add(new CellVO(tv55, tr55, 5, 5));
-        cells.add(new CellVO(tv56, tr56, 5, 6));
+        cells.add(new CellVO(this, tv51, tr51, clearCellColorResource));
+        cells.add(new CellVO(this, tv52, tr52, darkCellColorResource));
+        cells.add(new CellVO(this, tv53, tr53, clearCellColorResource));
+        cells.add(new CellVO(this, tv54, tr54, darkCellColorResource));
+        cells.add(new CellVO(this, tv55, tr55, clearCellColorResource));
+        cells.add(new CellVO(this, tv56, tr56, darkCellColorResource));
 
-        cells.add(new CellVO(tv61, tr61, 6, 1));
-        cells.add(new CellVO(tv62, tr62, 6, 2));
-        cells.add(new CellVO(tv63, tr63, 6, 3));
-        cells.add(new CellVO(tv64, tr64, 6, 4));
-        cells.add(new CellVO(tv65, tr65, 6, 5));
-        cells.add(new CellVO(tv66, tr66, 6, 6));
+        cells.add(new CellVO(this, tv61, tr61, darkCellColorResource));
+        cells.add(new CellVO(this, tv62, tr62, clearCellColorResource));
+        cells.add(new CellVO(this, tv63, tr63, darkCellColorResource));
+        cells.add(new CellVO(this, tv64, tr64, clearCellColorResource));
+        cells.add(new CellVO(this, tv65, tr65, darkCellColorResource));
+        cells.add(new CellVO(this, tv66, tr66, clearCellColorResource));
 
-        cells.add(new CellVO(tv71, tr71, 7, 1));
-        cells.add(new CellVO(tv72, tr72, 7, 2));
-        cells.add(new CellVO(tv73, tr73, 7, 3));
-        cells.add(new CellVO(tv74, tr74, 7, 4));
-        cells.add(new CellVO(tv75, tr75, 7, 5));
-        cells.add(new CellVO(tv76, tr76, 7, 6));
+        cells.add(new CellVO(this, tv71, tr71, clearCellColorResource));
+        cells.add(new CellVO(this, tv72, tr72, darkCellColorResource));
+        cells.add(new CellVO(this, tv73, tr73, clearCellColorResource));
+        cells.add(new CellVO(this, tv74, tr74, darkCellColorResource));
+        cells.add(new CellVO(this, tv75, tr75, clearCellColorResource));
+        cells.add(new CellVO(this, tv76, tr76, darkCellColorResource));
 
-        cells.add(new CellVO(tv81, tr81, 8, 1));
-        cells.add(new CellVO(tv82, tr82, 8, 2));
-        cells.add(new CellVO(tv83, tr83, 8, 3));
-        cells.add(new CellVO(tv84, tr84, 8, 4));
-        cells.add(new CellVO(tv85, tr85, 8, 5));
-        cells.add(new CellVO(tv86, tr86, 8, 6));
+        cells.add(new CellVO(this, tv81, tr81, darkCellColorResource));
+        cells.add(new CellVO(this, tv82, tr82, clearCellColorResource));
+        cells.add(new CellVO(this, tv83, tr83, darkCellColorResource));
+        cells.add(new CellVO(this, tv84, tr84, clearCellColorResource));
+        cells.add(new CellVO(this, tv85, tr85, darkCellColorResource));
+        cells.add(new CellVO(this, tv86, tr86, clearCellColorResource));
         for (int i = 0; i < cells.size(); i ++){
             cells.get(i).setCellIndex(i);
         }
@@ -368,6 +372,7 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
         if (restartGameView.getVisibility() == View.VISIBLE){
             gamePresenter.restartGame();
             restartGameView.setVisibility(View.GONE);
+            initializeGameView();
         }
     }
 

@@ -3,4 +3,8 @@
     <dimen name="normal">16dp</dimen>
     <dimen name="big">32dp</dimen>
     <dimen name="ultra">64dp</dimen>
+
+    <dimen name="text_regular">18sp</dimen>
+    <dimen name="text_big">20sp</dimen>
+    <dimen name="text_title">32sp</dimen>
 </resources>

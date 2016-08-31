@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MonsterBoard</string>
+    <string name="app_name">MonsterCells</string>
 
     <string name="player_one">O</string>
     <string name="player_two">X</string>
@@ -14,6 +14,6 @@
     <string name="wins_message">Player %1$s wins!.</string>
     <string name="draw_message">Draw!.</string>
 
-    <string name="restart_message">Please, tap to play again</string>
+    <string name="restart_message">Please, tap to play.</string>
 
 </resources>

@@ -5,11 +5,13 @@
     <color name="colorAccent">#FF4081</color>
 
 
-    <color name="cellClear">#e0e0e0</color>
-    <color name="cellDark">#a023ff</color>
+    <color name="cellClear">#E0E0E0</color>
+    <color name="cellDark">#A1A1A1</color>
 
-    <color name="playerO">@color/colorAccent</color>
-    <color name="playerX">@color/colorPrimary</color>
+    <color name="playerO">#42D582</color>
+    <color name="playerX">#15A7E1</color>
 
-    <color name="transparentGrey">#44E0E0E0</color>
+    <color name="black">#000</color>
+
+    <color name="transparentGrey">#A0A0A0A0</color>
 </resources>

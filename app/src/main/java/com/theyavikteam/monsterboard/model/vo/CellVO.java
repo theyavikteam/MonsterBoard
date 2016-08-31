@@ -1,21 +1,22 @@
 package com.theyavikteam.monsterboard.model.vo;
 
+import android.content.Context;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.theyavikteam.monsterboard.R;
 
 public class CellVO {
 
     private TextView textView;
     private TableRow tableRow;
-    private int column;
-    private int row;
     private int cellIndex;
 
-    public CellVO(TextView textView, TableRow tableRow, int column ,int row) {
+    public CellVO(Context context, TextView textView, TableRow tableRow, int cellColor) {
         this.textView = textView;
+        this.textView.setText("");
         this.tableRow = tableRow;
-        this.column = column;
-        this.row = row;
+        this.tableRow.setBackgroundColor(context.getResources().getColor(cellColor));
     }
 
     public TextView getTextView() {
