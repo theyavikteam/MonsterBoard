@@ -11,4 +11,9 @@
 
     <string name="error_move_message">Player %1$s, click another cell.</string>
 
+    <string name="wins_message">Player %1$s wins!.</string>
+    <string name="draw_message">Draw!.</string>
+
+    <string name="restart_message">Please, tap to play again</string>
+
 </resources>

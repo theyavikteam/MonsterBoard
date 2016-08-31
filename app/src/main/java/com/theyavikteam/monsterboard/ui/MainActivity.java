@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -244,6 +245,13 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
     @Bind(R.id.tv_player_X_score)
     TextView tvPlayerXScore;
 
+    @Bind(R.id.fl_restart_game)
+    FrameLayout restartGameView;
+    @Bind(R.id.tv_game_result)
+    TextView tvGameResult;
+    @Bind(R.id.tv_game_score)
+    TextView tvGameScore;
+
     GameContract.Presenter gamePresenter;
 
     List<CellVO> cells;
@@ -355,6 +363,14 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
         gamePresenter.onClickChange(playerTextView.getText().toString());
     }
 
+    @OnClick(R.id.fl_restart_game)
+    public void onClickRestart(){
+        if (restartGameView.getVisibility() == View.VISIBLE){
+            gamePresenter.restartGame();
+            restartGameView.setVisibility(View.GONE);
+        }
+    }
+
     @Override
     public void setCell(int cellIndex, PlayerDomain player) {
         if (cellIndex != -1){
@@ -383,5 +399,13 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
     public void setPlayersScore(String newOScore, String newXScore) {
         tvPlayerOScore.setText(newOScore);
         tvPlayerXScore.setText(newXScore);
+    }
+
+    @Override
+    public void finishGame(String result, String playerOScore, String playerXScore) {
+        String finalScore = playerOScore + " - " + playerXScore;
+        tvGameScore.setText(finalScore);
+        tvGameResult.setText(result);
+        restartGameView.setVisibility(View.VISIBLE);
     }
 }

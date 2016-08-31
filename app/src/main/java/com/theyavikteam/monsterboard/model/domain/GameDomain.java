@@ -15,6 +15,7 @@ public class GameDomain {
     private int rowSize;
     private List<CellDomain> cells;
     private List<CellDomain> aroundCells;
+    private String winner;
 
     public GameDomain(PlayerDomain playerO, PlayerDomain playerX, int columnSize, int rowSize) {
         this.playerO = playerO;
@@ -167,6 +168,26 @@ public class GameDomain {
                 break;
             }
         }
+        if (isFinished){
+            winner = getWinnerName();
+        }
         return isFinished;
+    }
+
+
+    public String getWinner() {
+        return winner;
+    }
+
+    private String getWinnerName(){
+        String winner;
+        if (playerO.getScore() == playerX.getScore()){
+            winner = null;
+        }else if (playerO.getScore() > playerX.getScore()){
+            winner = playerO.getPlayerSymbol();
+        }else {
+            winner = playerX.getPlayerSymbol();
+        }
+        return winner;
     }
 }

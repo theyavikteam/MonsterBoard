@@ -22,10 +22,16 @@ public class GamePresenter implements GameContract.Presenter {
     public void initializePresenter(Context context, GameContract.View view) {
         this.view = view;
         this.context = context;
+        restartGame();
+    }
+
+    @Override
+    public void restartGame() {
         game = new GameDomain(new PlayerDomain(PLAYER_O, R.color.playerO), new PlayerDomain(PLAYER_X, R.color.playerX), BOARD_COLUMNS, BOARD_ROWS);
         changeTurnMessage(R.string.turn_move_message, game.getCurrentPlayer());
         updateScores(game);
     }
+
 
     @Override
     public void onClickCell(int cellIndex) {
@@ -41,11 +47,17 @@ public class GamePresenter implements GameContract.Presenter {
                     updateScores(game);
                     changeTurnMessage(R.string.turn_play_message, game.getOtherPlayer());
                     view.setCell(cellIndex, currentPlayer);
+                    if (game.isGameFinished()){
+                        if (game.getWinner() != null){
+                            view.finishGame(formattedMessage(R.string.wins_message, game.getWinner()), game.getPlayerO().getScore()+"", game.getPlayerX().getScore()+"");
+                        }else {
+                            view.finishGame(context.getString(R.string.draw_message), game.getPlayerO().getScore()+"", game.getPlayerX().getScore()+"");
+                        }
+                    }
                 } else {
                     view.showToast(formattedMessage(R.string.turn_why_message, game.getOtherPlayer().getPlayerSymbol()));
                 }
             }
-
         }
     }
 

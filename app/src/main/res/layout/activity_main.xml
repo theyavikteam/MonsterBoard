@@ -569,4 +569,40 @@
         android:layout_gravity="center_horizontal"
         android:gravity="center"/>
 
+    <FrameLayout
+        android:id="@+id/fl_restart_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:background="@color/transparentGrey"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_game_result"
+            style="@style/GameText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ultra"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/big"/>
+
+        <TextView
+            android:id="@+id/tv_game_score"
+            style="@style/GameText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ultra"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            style="@style/TurnText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ultra"
+            android:layout_gravity="center_horizontal|bottom"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/ultra"
+            android:text="@string/restart_message"/>
+
+    </FrameLayout>
+
 </FrameLayout>

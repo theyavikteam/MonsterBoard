@@ -10,4 +10,6 @@
 
     <color name="playerO">@color/colorAccent</color>
     <color name="playerX">@color/colorPrimary</color>
+
+    <color name="transparentGrey">#44E0E0E0</color>
 </resources>
