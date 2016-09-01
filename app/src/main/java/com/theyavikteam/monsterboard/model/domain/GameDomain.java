@@ -1,6 +1,7 @@
 package com.theyavikteam.monsterboard.model.domain;
 
 import com.theyavikteam.monsterboard.model.constants.GameConstants;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -21,7 +22,7 @@ public class GameDomain {
         this.playerO = playerO;
         this.playerX = playerX;
         movementMade = false;
-        turn = (new Random().nextInt(10))%2;
+        turn = (new Random().nextInt(10)) % 2;
         this.columnSize = columnSize;
         this.rowSize = rowSize;
         this.cells = initializeCells();
@@ -91,7 +92,96 @@ public class GameDomain {
         cells.get(cellIndex).setPlayer(currentPlayer);
         newScore += getLinealScore(currentPlayer, cellIndex);
         newScore += getDiagonalScore(currentPlayer, cellIndex);
+        newScore += getThreeInLineScore(currentPlayer, cellIndex);
         currentPlayer.setScore(newScore);
+    }
+
+    private int getThreeInLineScore(PlayerDomain currentPlayer, int cellIndex) {
+        refreshAroundCells();
+        int score = 0;
+        score += getVerticalScore(currentPlayer, cellIndex);
+        score += getHorizontalScore(currentPlayer, cellIndex);
+        score += getUpwardScore(currentPlayer, cellIndex);
+        score += getFalling(currentPlayer, cellIndex);
+        return score;
+    }
+
+    private int getVerticalScore(PlayerDomain currentPlayer, int cellIndex) {
+        findVerticalCellByCellIndex(currentPlayer, cellIndex);
+        int score = 0;
+        if (aroundCells.size() >= 2) {
+            score = (aroundCells.size() + 1) * GameConstants.LINE_SCORE;
+        }
+        return score;
+    }
+
+    private void findVerticalCellByCellIndex(PlayerDomain currentPlayer, int cellIndex) {
+        int countLimit = cellIndex % rowSize;
+        for (int i = 1; i <= countLimit; i++) {
+            if (cellIndex > 0 || cellIndex - i >= 0) {
+                CellDomain findCell = cells.get(cellIndex - i);
+                if (cellsHasSamePlayer(findCell, currentPlayer)) {
+                    aroundCells.add(findCell);
+                } else {
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+
+        for (int i = 1; i + countLimit < rowSize; i++) {
+            if (cellIndex < cells.size() || cellIndex + i < cells.size()) {
+                CellDomain findCell = cells.get(cellIndex + i);
+                if (cellsHasSamePlayer(findCell, currentPlayer)) {
+                    aroundCells.add(findCell);
+                } else {
+                    break;
+                }
+            } else {
+                break;
+            }
+        }
+    }
+
+    private boolean cellsHasSamePlayer(CellDomain findCell, PlayerDomain currentPlayer){
+        return findCell.hasPlayer() && findCell.getPlayer().getPlayerSymbol().equals(currentPlayer.getPlayerSymbol());
+    }
+
+    private int getHorizontalScore(PlayerDomain currentPlayer, int cellIndex) {
+        findHorizontalCellByCellIndex(currentPlayer, cellIndex);
+        int score = 0;
+        if (aroundCells.size() >= 2) {
+            score = (aroundCells.size() + 1) * GameConstants.LINE_SCORE;
+        }
+        return score;
+    }
+
+    private void findHorizontalCellByCellIndex(PlayerDomain currentPlayer, int cellIndex){
+        for (int i = cellIndex - rowSize; i >= 0; i -= rowSize){
+            CellDomain findCell = cells.get(i);
+            if (cellsHasSamePlayer(findCell, currentPlayer)) {
+                aroundCells.add(findCell);
+            } else {
+                break;
+            }
+        }
+        for (int i = cellIndex + rowSize; i < cells.size(); i += rowSize){
+            CellDomain findCell = cells.get(i);
+            if (cellsHasSamePlayer(findCell, currentPlayer)) {
+                aroundCells.add(findCell);
+            } else {
+                break;
+            }
+        }
+    }
+
+    private int getUpwardScore(PlayerDomain currentPlayer, int cellIndex) {
+        return 0;
+    }
+
+    private int getFalling(PlayerDomain currentPlayer, int cellIndex) {
+        return 0;
     }
 
     private int getLinealScore(PlayerDomain currentPlayer, int cellIndex) {
@@ -140,10 +230,6 @@ public class GameDomain {
         return score;
     }
 
-    private void refreshAroundCells() {
-        aroundCells = new ArrayList<>();
-    }
-
     private void addIfMajorThan(int index) {
         addIfThan(index, 0, true);
     }
@@ -160,6 +246,10 @@ public class GameDomain {
         }
     }
 
+    private void refreshAroundCells() {
+        aroundCells = new ArrayList<>();
+    }
+
     public boolean isGameFinished() {
         boolean isFinished = true;
         for (CellDomain cell : cells) {
@@ -168,7 +258,7 @@ public class GameDomain {
                 break;
             }
         }
-        if (isFinished){
+        if (isFinished) {
             winner = getWinnerName();
         }
         return isFinished;
@@ -179,13 +269,13 @@ public class GameDomain {
         return winner;
     }
 
-    private String getWinnerName(){
+    private String getWinnerName() {
         String winner;
-        if (playerO.getScore() == playerX.getScore()){
+        if (playerO.getScore() == playerX.getScore()) {
             winner = null;
-        }else if (playerO.getScore() > playerX.getScore()){
+        } else if (playerO.getScore() > playerX.getScore()) {
             winner = playerO.getPlayerSymbol();
-        }else {
+        } else {
             winner = playerX.getPlayerSymbol();
         }
         return winner;
