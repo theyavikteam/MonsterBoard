@@ -1,5 +1,7 @@
 package com.theyavikteam.monsterboard.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +22,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements GameContract.View{
+public class GameActivity extends AppCompatActivity implements GameContract.View{
 
     @Bind(R.id.tv_1_1)
     TextView tv11;
@@ -257,6 +259,11 @@ public class MainActivity extends AppCompatActivity implements GameContract.View
     List<CellVO> cells;
 
     Toast messageToast;
+
+    public static void start(Context context) {
+        Intent starter = new Intent(context, GameActivity.class);
+        context.startActivity(starter);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

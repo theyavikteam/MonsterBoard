@@ -16,4 +16,10 @@
 
     <string name="restart_message">Please, tap to play.</string>
 
+    <string name="classic_game">Classic Game</string>
+    <string name="bt_game">Bluetooth Game</string>
+
+    <string name="create_game">Create Game</string>
+    <string name="join_game">Join BT Game</string>
+
 </resources>
